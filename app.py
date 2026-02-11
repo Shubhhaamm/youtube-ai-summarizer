@@ -3,9 +3,16 @@ import re
 import os
 from youtube_transcript_api import YouTubeTranscriptApi
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+api_key = os.getenv("GOOGLE_API_KEY")
 
 
-genai.configure(api_key="AIzaSyAlx9bdhQcgLP-WhFUUDoWqv_urKzFZimM")
+genai.configure(api_key=api_key)
+
 
 model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
